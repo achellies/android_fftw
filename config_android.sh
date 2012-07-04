@@ -23,7 +23,10 @@ make distclean
 fi
 
 # Set this to your NDK location
-export ANDROID_NDK_ROOT=/home/yossi/Android/android-ndk-r8
+#export ANDROID_NDK_ROOT=/home/yossi/Android/android-ndk-r8
+# REMEMBER TO ./build/envsetup.sh && lunch N
+export ANDROID_NDK_ROOT=$ANDROID_BUILD_TOP/prebuilt/ndk/android-ndk-r7
+
 
 # See: http://developer.android.com/guide/appendix/api-levels.html
 export ANDROID_API_LEVEL="android-8"
@@ -40,5 +43,5 @@ export PATH=$ANDROID_NDK_ROOT/toolchains/arm-linux-androideabi-4.4.3/prebuilt/li
             --disable-alloca
 
 mv config.h config.h.android
-make distclean
+#make distclean
 mv config.h.android config.h
